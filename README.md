@@ -25,3 +25,12 @@ The **CIFAR-10** dataset consists of 60,000 images, divided into 10 classes, suc
 
 ## Output
 ![Image](https://github.com/user-attachments/assets/d8c13621-54bb-473a-85b6-9ff95665d820)
+![Image](https://github.com/user-attachments/assets/9d333ece-4c85-4c9a-82f8-961517dbbd15)
+
+![Image](https://github.com/user-attachments/assets/747b864f-a83f-4c65-804b-f1349172da1c)
+
+![Image](https://github.com/user-attachments/assets/49d60c42-bf01-4afc-872b-b1f15a1b5e07)
+
+![Image](https://github.com/user-attachments/assets/7eaa425d-15c1-448a-baae-e2846213c9be)
+
+![Image](https://github.com/user-attachments/assets/452c7dcd-1fa8-4f16-913f-09b54148f1cf)
