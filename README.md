@@ -1,3 +1,6 @@
+👩‍💻 Developed by: G.A.Ashmitha
+🎓 Internship Domain: Artifical Intelligence
+🏢 Company: Digital Bhem
 # Task 1
 # Image Classification Project 🖼️🤖
 
@@ -20,12 +23,5 @@ The **CIFAR-10** dataset consists of 60,000 images, divided into 10 classes, suc
 - **Platform:** Google Colab ☁️
 - **Task:** Image Classification 📷
 
-## Project Structure:
-- **model.ipynb:** Colab notebook that contains the full code for training and testing the CNN model.
-- **requirements.txt:** List of Python dependencies for running the project.
-- **images/**: Optional folder for storing sample output images (if applicable).
+## Output
 
-## Instructions:
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/username/image_classification_project.git
