@@ -1,0 +1,55 @@
+!pip install tensorflow
+import tensorflow as tf
+from tensorflow.keras.datasets import cifar10
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
+from tensorflow.keras.utils import to_categorical
+
+# Load CIFAR-10 dataset
+(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+
+# Normalize pixel values between 0 and 1
+x_train, x_test = x_train / 255.0, x_test / 255.0
+
+# One-hot encode labels
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+model = Sequential([
+    Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)),
+    MaxPooling2D((2, 2)),
+    Conv2D(64, (3, 3), activation='relu'),
+    MaxPooling2D((2, 2)),
+    Conv2D(128, (3, 3), activation='relu'),
+    Flatten(),
+    Dense(128, activation='relu'),
+    Dropout(0.5),
+    Dense(10, activation='softmax')
+])
+
+# Compile the model
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+model.summary()
+test_loss, test_acc = model.evaluate(x_test, y_test)
+print(f'Test accuracy: {test_acc:.4f}')
+import numpy as np
+
+predictions = model.predict(x_test[:5])
+print("Predicted labels:", np.argmax(predictions, axis=1))
+print("True labels:", np.argmax(y_test[:5], axis=1))
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Ensure inline plotting
+%matplotlib inline
+
+# Generate predictions for the first 5 images
+predictions = model.predict(x_test[:5])
+
+# Plot the first 5 images with their predicted and actual labels
+for i in range(5):
+    plt.figure(figsize=(2, 2))  # Smaller figure size
+    plt.imshow(x_test[i], interpolation='nearest')  # Avoid blurring
+    plt.title(f"Predicted: {np.argmax(predictions[i])} | Actual: {np.argmax(y_test[i])}")
+    plt.axis('off')  # Hide axes
+    plt.show()
